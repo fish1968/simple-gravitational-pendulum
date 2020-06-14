@@ -10,11 +10,11 @@ def odd(n):
     # example:
     # odd(3) => 3*1 = 3
     # odd(9) => 9*7*5*3*1 = 945
-    if n == 1:
-        return 1
-    else:
-        return odd(n-2)*n
-
+    a  = [i for i in range(1,n+1,2)]
+    value = 1
+    for i in a:
+        value *= i
+    return value
 def coe(n):
     #return the coeffiency of the (n+1)th term
     #example:
