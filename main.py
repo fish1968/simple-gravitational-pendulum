@@ -21,7 +21,7 @@ def coe(n):
     #coe(1) => 1 + "1/4" + 0.140625 + ...
     #coe(2) => 1 + 1/4 + "0.140625"
     numerator = odd(2*n -1)
-    denominator = factorial(n)**2
+    denominator = factorial(n)*2**n
     return (numerator/denominator/2)**2
 
 def term(n,angle):
@@ -56,7 +56,8 @@ def main():
             break
         n = eval(input("Enter the term you want:"))
         half_angle = angle*(pi/360)
-        print(time(n, half_angle))
+        for i in range(1,n+1):
+            print(i,'\t',time(i, half_angle))
     
     while True:
         length = input("enter the length of the pendulum (q or None to quit):")
